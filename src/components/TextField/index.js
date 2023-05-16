@@ -1,10 +1,15 @@
 import './TextField.css'
 
-const TextField = () => {
+const TextField = (props) => {
+
+   const placeHolder = `${props.placeholder}`
+   
     return (
        <div className="text-field">
-        <label>Nome</label>
-        <input placeholder="Digite seu nome"/>
+        <label>
+         {props.label}
+         </label>
+        <input placeholder={placeHolder}/>
        </div>
     )
 }
