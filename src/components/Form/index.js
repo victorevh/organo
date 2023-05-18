@@ -21,6 +21,11 @@ const Form = (props) => {
             image,
             teamState
         })
+        setName('')
+        setJob('')
+        setImage('')
+        setTeam('')
+    
     }
 
     return (
@@ -30,20 +35,20 @@ const Form = (props) => {
                 <TextField 
                     mandatory={true}
                     label="Nome" 
-                    placeholder="Digite seu nome"
+                    placeholder="Digite seu nome..."
                     value={name}
                     modify={value => setName(value)}
                 />
                 <TextField 
                     mandatory={true}
                     label="Cargo" 
-                    placeholder="Digite o endereço da imagem"
+                    placeholder="Digite seu cargo..."
                     value={job} 
                     modify={value => setJob(value)}
                 />
                 <TextField 
                     label="Imagem" 
-                    placeholder="Digite seu cargo" 
+                    placeholder="Digite o endereço da imagem..." 
                     value={image}
                     modify={value => setImage(value)}
                 />

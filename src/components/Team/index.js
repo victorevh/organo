@@ -1,3 +1,4 @@
+import Employee from '../Employee'
 import './Team.css'
 
 const Team = (props) => {
@@ -6,12 +7,15 @@ const Team = (props) => {
     const borderColor = {borderColor: props.primaryColor}
 
     return (
-        <section className="team" style={backgroundColor}>
-            <h3 style={borderColor}>
-                {props.name}
-            </h3>
+        (props.employees.length > 0) ? <section className='team' style={backgroundColor}>
+        <h3 style={borderColor}>
+            {props.name}
+        </h3>
+        <div className='employees'>
+            {props.employees.map(employee => <Employee name={employee.name} job={employee.job} image={employee.image}/>)}
+        </div>
 
-        </section>
+    </section> : ''
     )
 }
 

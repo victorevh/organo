@@ -49,13 +49,19 @@ function App() {
     console.log(employee)
     setEmployees([...employees, employee])
   }
-
+  
   return (
     <div className="App">
       <Banner />
       <Form teams={teams.map(teams => teams.name)} registerEmployee={employee => addNewEmployee(employee)} />
 
-      {teams.map(teams => <Team key={teams.name} name={teams.name} primaryColor={teams.primaryColor} secondaryColor={teams.secondaryColor}/>)}
+      {teams.map(teams => <Team 
+        key={teams.name} 
+        name={teams.name} 
+        primaryColor={teams.primaryColor} 
+        secondaryColor={teams.secondaryColor}
+        employees={employees.filter(employee => employee.teamState === teams.name)}
+      />)}
 
     </div>
   );
