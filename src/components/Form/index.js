@@ -4,16 +4,7 @@ import DropdownList from '../DropdownList'
 import Button from '../Button'
 import { useState } from 'react'
 
-const Form = () => {
-    const team = [
-        'Programação',
-        'Front-End',
-        'Data Science',
-        'Devops',
-        'UX e Design',
-        'Mobile',
-        'Inovação e Gestão'
-    ]
+const Form = (props) => {
 
     const [name, setName] = useState('');
     const [job, setJob] = useState('');
@@ -24,6 +15,12 @@ const Form = () => {
         
         event.preventDefault()
         console.log('Form sucedido =>', name, job, image, teamState)
+        props.registerEmployee({
+            name,
+            job,
+            image,
+            teamState
+        })
     }
 
     return (
@@ -53,10 +50,9 @@ const Form = () => {
                 <DropdownList
                     mandatory={true}
                     label="Time"
-                    itens={team}
+                    itens={props.teams}
                     value={teamState}
                     modify={value => setTeam(value)}
-                    
                 />
                 <Button>
                     Criar Card
