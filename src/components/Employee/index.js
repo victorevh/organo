@@ -1,6 +1,6 @@
 import './Employee.css'
 
-const Employee = ({name, job, image, borderColor}) => {
+export const Employee = ({name, job, image, borderColor}) => {
     return(
         <div className='employee'>
             <div className='header' style={{ backgroundColor: borderColor}}>
@@ -17,5 +17,3 @@ const Employee = ({name, job, image, borderColor}) => {
         </div>
     )
 }
-
-export default Employee

@@ -1,10 +1,10 @@
 import './Form.css'
-import TextField from '../TextField'
-import DropdownList from '../DropdownList'
-import Button from '../Button'
+import { TextField } from '../TextField'
+import { DropdownList } from '../DropdownList'
+import { Button } from '../Button'
 import { useState } from 'react'
 
-const Form = (props) => {
+export const Form = (props) => {
 
     const [name, setName] = useState('');
     const [job, setJob] = useState('');
@@ -65,4 +65,3 @@ const Form = (props) => {
         </section>
     )
 }
-export default Form

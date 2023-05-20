@@ -1,6 +1,6 @@
 import './DropdownList.css'
 
-const DropdownList = (props) => {
+export const DropdownList = (props) => {
 
     return(
         <div className="dropdown-list">
@@ -16,5 +16,3 @@ const DropdownList = (props) => {
         </div>
     )
 }
-
-export default DropdownList

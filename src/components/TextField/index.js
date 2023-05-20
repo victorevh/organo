@@ -1,6 +1,6 @@
 import './TextField.css'
 
-const TextField = (props) => {
+export const TextField = (props) => {
 
    const placeHolder = `${props.placeholder}`
 
@@ -19,5 +19,3 @@ const TextField = (props) => {
        </div>
     )
 }
-
-export default TextField

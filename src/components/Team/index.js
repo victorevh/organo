@@ -1,7 +1,7 @@
-import Employee from '../Employee'
+import { Employee } from '../Employee'
 import './Team.css'
 
-const Team = (props) => {
+export const Team = (props) => {
    
     const backgroundColor = {backgroundColor: props.secondaryColor}
     const borderColor = {borderColor: props.primaryColor}
@@ -18,5 +18,3 @@ const Team = (props) => {
     </section> : ''
     )
 }
-
-export default Team
