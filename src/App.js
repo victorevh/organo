@@ -48,8 +48,11 @@ function App() {
   const [employeeIdCounter, setEmployeeIdCounter] = useState(1);
 
   useEffect(() => {
-    localStorage.setItem('employees', JSON.stringify(employees));
-  }, [employees]);
+    const savedEmployees = localStorage.getItem('employees');
+    if (savedEmployees) {
+      setEmployees(JSON.parse(savedEmployees));
+    }
+  }, []);
 
   const addNewEmployee = (employee) => {
     const newEmployee = { ...employee, id: employeeIdCounter };
@@ -57,11 +60,14 @@ function App() {
     setEmployeeIdCounter((prevCounter) => prevCounter + 1);
   }
   
+  useEffect(() => {
+    localStorage.setItem('employees', JSON.stringify(employees));
+  }, [employees]);
   
   return (
     <div className="App">
       <Banner />
-      <Form teams={teams.map(teams => teams.name)} registerEmployee={employee => addNewEmployee(employee)} />
+      <Form teams={teams.map(teams => teams.name)} registerEmployee={addNewEmployee} />
 
       {teams.map(teams => <Team 
         key={teams.name} 
