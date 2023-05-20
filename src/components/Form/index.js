@@ -14,7 +14,6 @@ const Form = (props) => {
     const inSave = (event) => {
         
         event.preventDefault()
-        console.log('Form sucedido =>', name, job, image, teamState)
         props.registerEmployee({
             name,
             job,
