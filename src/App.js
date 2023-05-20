@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Banner } from './components/Banner';
 import { Form } from './components/Form';
 import { Team } from './components/Team';
@@ -47,11 +47,16 @@ function App() {
 
   const [employeeIdCounter, setEmployeeIdCounter] = useState(1);
 
+  useEffect(() => {
+    localStorage.setItem('employees', JSON.stringify(employees));
+  }, [employees]);
+
   const addNewEmployee = (employee) => {
     const newEmployee = { ...employee, id: employeeIdCounter };
     setEmployees([...employees, newEmployee]);
     setEmployeeIdCounter((prevCounter) => prevCounter + 1);
   }
+  
   
   return (
     <div className="App">
