@@ -1,10 +1,17 @@
 import './Employee.css'
 
-export const Employee = ({name, job, image, borderColor}) => {
+export const Employee = ({name, job, image, borderColor, onRemove}) => {
     return(
         <div className='employee'>
             <div className='header' style={{ backgroundColor: borderColor}}>
-                <img src={image} alt={name} />
+                <div className="div1">
+                    <button className="remove-button"onClick={onRemove}>
+                         X
+                    </button>
+                </div>
+                <div className="div2">
+                    <img src={image} alt={name} />
+                </div>
             </div>
             <div className='footer'>
                 <h4>
@@ -13,6 +20,7 @@ export const Employee = ({name, job, image, borderColor}) => {
                 <h5>
                     {job}
                 </h5>
+
             </div>
         </div>
     )

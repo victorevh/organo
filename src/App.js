@@ -64,6 +64,7 @@ function App() {
     localStorage.setItem('employees', JSON.stringify(employees));
   }, [employees]);
   
+
   return (
     <div className="App">
       <Banner />
@@ -75,6 +76,7 @@ function App() {
         primaryColor={teams.primaryColor} 
         secondaryColor={teams.secondaryColor}
         employees={employees.filter(employee => employee.teamState === teams.name)}
+        setEmployees={setEmployees}
       />)}
 
     </div>
