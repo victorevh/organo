@@ -45,9 +45,12 @@ function App() {
   
   const [employees, setEmployees] = useState([])
 
+  const [employeeIdCounter, setEmployeeIdCounter] = useState(1);
+
   const addNewEmployee = (employee) => {
-    console.log(employee)
-    setEmployees([...employees, employee])
+    const newEmployee = { ...employee, id: employeeIdCounter };
+    setEmployees([...employees, newEmployee]);
+    setEmployeeIdCounter((prevCounter) => prevCounter + 1);
   }
   
   return (
