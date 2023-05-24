@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Banner } from './components/Banner';
 import { Form } from './components/Form';
 import { Team } from './components/Team';
@@ -45,39 +45,19 @@ function App() {
   
   const [employees, setEmployees] = useState([])
 
-  const [employeeIdCounter, setEmployeeIdCounter] = useState(1);
-
-  useEffect(() => {
-    const savedEmployees = localStorage.getItem('employees');
-    if (savedEmployees) {
-      setEmployees(JSON.parse(savedEmployees));
-    }
-  }, []);
-
-  const addNewEmployee = (employee) => {
-    const newEmployee = { ...employee, id: employeeIdCounter };
-    setEmployees([...employees, newEmployee]);
-    setEmployeeIdCounter((prevCounter) => prevCounter + 1);
-  }
-  
-  useEffect(() => {
-    localStorage.setItem('employees', JSON.stringify(employees));
-  }, [employees]);
-  
-
   return (
     <div className="App">
       <Banner />
-      <Form teams={teams.map(teams => teams.name)} registerEmployee={addNewEmployee} />
+      <Form teams={teams.map(teams => teams.name)} registerEmployee={employee => setEmployees([...employees, employee])} />
+      <section className="teams">
+        <h1>Minha organização</h1>
+        {teams.map((teams, id) => <Team 
+          key={id} 
+          team={teams}
+          employees={employees.filter(employee => employee.teamState === teams.name)}
+        />)}
+      </section>
 
-      {teams.map(teams => <Team 
-        key={teams.name} 
-        name={teams.name} 
-        primaryColor={teams.primaryColor} 
-        secondaryColor={teams.secondaryColor}
-        employees={employees.filter(employee => employee.teamState === teams.name)}
-        setEmployees={setEmployees}
-      />)}
 
     </div>
   );
