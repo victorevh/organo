@@ -9,9 +9,7 @@ export const DropdownList = ({label, itens, modify, value, mandatory = false}) =
             </label>
             <select onChange={event => modify(event.target.value)} required={mandatory} value={value}>
                     <option />
-                    {itens.map(item => { 
-                       return <option key={item}>{item}</option>
-                    })}
+                    {itens.map(item => <option key={item}>{item}</option>)}
             </select>
         </div>
     )

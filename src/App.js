@@ -43,7 +43,7 @@ function App() {
       name: 'Inovação e Gestão',
       color: '#FF8A29',
     },
-  ])
+  ]);
 
   const start = [
     {
@@ -249,8 +249,8 @@ function App() {
     }));
   }
 
-  function addTeam(newTeam) {
-    setTeams([...teams, {...newTeam, id: uuidv4()}])
+  function addTeam({name, color}) {
+    setTeams([...teams, {name, color, id: uuidv4()}])
   }
 
   function resolveFav(id) {

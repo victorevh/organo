@@ -9,7 +9,7 @@ export const Form = ({registerEmployee, teams, addNewTeam}) => {
     const [name, setName] = useState('');
     const [job, setJob] = useState('');
     const [image, setImage] = useState('');
-    const [teamState, setTeam] = useState('');
+    const [team, setTeam] = useState('');
     const [nameTeam, setNameTeam] = useState('');
     const [colorTeam, setColorTeam] = useState('');
 
@@ -21,7 +21,7 @@ export const Form = ({registerEmployee, teams, addNewTeam}) => {
             name,
             job,
             image,
-            teamState
+            team
         })
         setName('');
         setJob('');
@@ -51,23 +51,21 @@ export const Form = ({registerEmployee, teams, addNewTeam}) => {
                 <Field 
                     label='Imagem' 
                     placeholder='Digite o endereço da imagem...' 
-                    value={image}
                     modify={value => setImage(value)}
                 />
                 <DropdownList
                     mandatory={true}
                     label='Time'
                     itens={teams}
-                    value={teamState}
+                    value={team}
                     modify={value => setTeam(value)}
                 />
-                <Button>
-                    Criar Card
-                </Button>
+                <Button text='Criar um novo card' />
             </form>
             <form className='form' onSubmit={(event) => {
                 event.preventDefault()
-                addNewTeam({name: nameTeam, color: colorTeam})
+                addNewTeam({name: nameTeam, color: colorTeam});
+                setNameTeam('');
             }}>
                 <h2>Preencha os dados para criar um novo time</h2>
                 <Field 
@@ -85,9 +83,7 @@ export const Form = ({registerEmployee, teams, addNewTeam}) => {
                     value={colorTeam} 
                     modify={value => setColorTeam(value)}
                 />
-                <Button>
-                    Criar um novo time
-                </Button>
+                <Button text='Criar um novo time' />
             </form>
         </section>
     )

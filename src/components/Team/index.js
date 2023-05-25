@@ -5,10 +5,11 @@ import './Team.css'
 export const Team = ({team, employees, onRemove, changeColor, inFav}) => {
    
     return (
-        (employees.length > 0) && <section className='team' style={{ backgroundImage: 'url(/images/fundo.png)', backgroundColor: hexToRgba(team.color, '0.6')}}>
+        employees.length > 0 && <section className='team' style={{ backgroundImage: 'url(/images/fundo.png)', backgroundColor: hexToRgba(team.color, '0.6')}}>
         <input 
             className="input-color" 
-            value={team.color} type='color' 
+            value={team.color} 
+            type='color' 
             onChange={event => {
                 changeColor(event.target.value, team.id)
             }} 

@@ -1,7 +1,7 @@
 import './Button.css'
 
-export const Button = (props) => {
+export const Button = ({text}) => {
     return (<button className="btn">
-        {props.children}
+        {text}
     </button>)
 }
