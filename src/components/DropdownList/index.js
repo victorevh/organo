@@ -1,15 +1,15 @@
 import './DropdownList.css'
 
-export const DropdownList = (props) => {
+export const DropdownList = ({label, itens, modify, value, mandatory = false}) => {
 
     return(
         <div className="dropdown-list">
             <label>
-                {props.label}
+                {label}
             </label>
-            <select onChange={event => props.modify(event.target.value)} required={props.mandatory} value={props.value}>
-                    <option value=""></option>
-                    {props.itens.map(item => { 
+            <select onChange={event => modify(event.target.value)} required={mandatory} value={value}>
+                    <option />
+                    {itens.map(item => { 
                        return <option key={item}>{item}</option>
                     })}
             </select>
