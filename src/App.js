@@ -170,68 +170,6 @@ function App() {
       image: 'https://github.com/rubemfsv.png',
       team: teams[3].name
     },
-    {
-      id: uuidv4(),
-      fav: false,
-      name: 'Victor Oliveira',
-      job: 'Desenvolvedor de software',
-      image: 'https://github.com/victorevh.png',
-      team: teams[4].name
-    },
-    {
-      id: uuidv4(),
-      fav: false,
-      name: 'Yasmin Jandriele',
-      job: 'Desenvolvedora JavaScript',
-      image: 'https://github.com/yasjcarvalho.png',
-      team: teams[4].name
-    },
-    {
-      id: uuidv4(),
-      fav: false,
-      name: 'Juan Pinheiro',
-      job: 'Desenvolvedor JavaScript',
-      image: 'https://github.com/juanpinheirx.png',
-      team: teams[4].name
-    },
-    {
-      id: uuidv4(),
-      name: 'Rubem Ferreira',
-      job: 'Desenvolvedor de software',
-      image: 'https://github.com/rubemfsv.png',
-      team: teams[4].name
-    },
-    {
-      id: uuidv4(),
-      fav: false,
-      name: 'Victor Oliveira',
-      job: 'Desenvolvedor de software',
-      image: 'https://github.com/victorevh.png',
-      team: teams[5].name
-    },
-    {
-      id: uuidv4(),
-      fav: false,
-      name: 'Yasmin Jandriele',
-      job: 'Desenvolvedora JavaScript',
-      image: 'https://github.com/yasjcarvalho.png',
-      team: teams[5].name
-    },
-    {
-      id: uuidv4(),
-      fav: false,
-      name: 'Juan Pinheiro',
-      job: 'Desenvolvedor JavaScript',
-      image: 'https://github.com/juanpinheirx.png',
-      team: teams[5].name
-    },
-    {
-      id: uuidv4(),
-      name: 'Rubem Ferreira',
-      job: 'Desenvolvedor de software',
-      image: 'https://github.com/rubemfsv.png',
-      team: teams[5].name
-    },
   ]
   
   const [employees, setEmployees] = useState(start)
